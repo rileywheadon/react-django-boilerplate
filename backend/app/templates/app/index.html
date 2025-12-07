@@ -1,1 +1,37 @@
-<h1>Hello world!</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React + Django</title>
+    {% load static %}
+    {% load vite_tags %}
+    {% if debug %}
+        <!-- Development: Link to Vite dev server -->
+        <script>
+            // Redirect to Vite dev server in development
+            if (window.location.port !== '3000') {
+                window.location.href = 'http://localhost:3000';
+            }
+        </script>
+    {% else %}
+        <!-- Production: Load built React CSS from manifest -->
+        {% vite_css 'src/main.jsx' %}
+    {% endif %}
+</head>
+<body>
+    <div id="root">
+        <!-- React will mount here -->
+        {% if debug %}
+            <p>Redirecting to React development server...</p>
+        {% else %}
+            <p>Loading React app...</p>
+        {% endif %}
+    </div>
+    
+    {% if not debug %}
+        <!-- Production: Load built React JavaScript from manifest -->
+        <script type="module" src="{% vite_asset 'src/main.jsx' %}"></script>
+    {% endif %}
+</body>
+</html>
