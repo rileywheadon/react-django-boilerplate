@@ -1,4 +1,3 @@
 backend/static/**
 .venv/**
-**/__pycache__/**
 **/node_modules/**
