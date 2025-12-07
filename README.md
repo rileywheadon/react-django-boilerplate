@@ -4,8 +4,6 @@ Full-stack web application boilerplate with a React frontend and Django backend.
 
 ## Quick Start
 
-### Development Mode
-
 ```bash
 # Start both React and Django development servers
 ./dev-start.sh
@@ -13,17 +11,8 @@ Full-stack web application boilerplate with a React frontend and Django backend.
 
 This will start:
 
-- React development server on http://localhost:3000 (with hot reloading)
+- React development server on http://localhost:3000 
 - Django API server on http://localhost:8000
-
-### Production Mode
-
-```bash
-# Build React and serve through Django
-./build-and-run.sh
-```
-
-This will build the React app and serve it through Django on http://localhost:8000
 
 ## Project Structure
 
@@ -69,13 +58,6 @@ This will build the React app and serve it through Django on http://localhost:80
 
 ## Next Steps
 
-- Debug why the `./build-and-run.sh` script is not working.
-
----
-
-- Add authentication (JWT tokens)
-- Set up database models and migrations
-- Add React routing with React Router
-- Implement form handling and validation
-- Add tests for both frontend and backend
-- Set up CI/CD pipeline
+- Add TailwindCSS
+- Set up example database models and migrations
+- Deploy this application on a DigitalOcean droplet with nginx

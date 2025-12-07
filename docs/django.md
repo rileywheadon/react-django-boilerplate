@@ -10,8 +10,6 @@
 6. Navigate to project root
 7. Bootstrap project: `django-admin startproject project backend`
 
-## Project Setup
-
 ### `startproject`
 
 The `startproject` command creates the following files:
@@ -32,7 +30,7 @@ app/
 - `asgi.py`: https://docs.djangoproject.com/en/6.0/howto/deployment/asgi/
 - `wsgi.py`: https://docs.djangoproject.com/en/6.0/howto/deployment/wsgi/
 
-**Note**: The following commands perform administratice tasks in Django:
+**Note**: The following commands perform administrative tasks in Django:
 
 ```
 django-admin <command> [options]
@@ -96,7 +94,14 @@ These can be removed if necessary.
 After you have created a template, you must add the path to the templates directory to the `TEMPLATES` variable in `project/settings.py`.
 You can build file paths in the settings file using the `BASE_DIR` variable.
 
-### Database
+## Integration with React
 
-TBD
+We use [Django REST Framework](https://www.django-rest-framework.org/) to allow Django to return JSON instead of HTML. 
+This library also provides additional functionality such as:
 
+- Serializers for converting Django ORM model instances to/from JSON. 
+- Built-in support for authentication (tokens, sessions, JWT).
+- A view class built specifically for the Django REST Framework.
+
+We also use the [Django CORS Headers](https://pypi.org/project/django-cors-headers/#description) project to add [**Cross-Origin Resource Sharing**](https://jakearchibald.com/2021/cors/) (CORS) headers to our responses. 
+This allows our React frontend to make requests to our Django application without permissions issues.
